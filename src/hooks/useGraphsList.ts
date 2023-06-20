@@ -10,12 +10,10 @@ const useGraphsList = () => {
       try {
         const response = await fetch('/api/graphs');
         const data = await response.json();
-        console.log('data: ', data);
         setGraphs(data);
         setLoading(false);
       } catch (error) {
         setError(error as Error);
-        console.log('error: ', error)
         setLoading(false);
       }
     };
