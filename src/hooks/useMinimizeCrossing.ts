@@ -12,7 +12,6 @@ const useMinimizeCrossings = (
     for (let i = 0; i < columns.length - 1; i++) {
       const column = columns[i];
       const nextColumn = columns[i + 1];
-      console.log('column: ', column);
 
       const newOrder = [...nextColumn].sort((nodeA, nodeB) => {
         const nodeAParents = edges
