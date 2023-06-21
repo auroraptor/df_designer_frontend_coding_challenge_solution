@@ -11,10 +11,11 @@ const GraphsList = () => {
   }
 
   return (
-    <div>
+    <div style={{padding: "30px"}}>
       <select 
         value={selectedGraph || ''}
         onChange={(e) => setSelectedGraph(Number(e.target.value))}
+        style={{border: "2px dotted black", borderRadius: "10px", padding: "6px 12px"}}
       >
         {graphs?.map((_, index) => (
           <option key={index} value={index}>
