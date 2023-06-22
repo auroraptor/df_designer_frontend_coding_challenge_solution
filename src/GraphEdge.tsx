@@ -45,7 +45,7 @@ function Connector(props: PropsConnector) {
         x2={Math.abs(coords.x2 - coords.x1)}
         y2={Math.abs(coords.y2 - coords.y1)}
         stroke="black"
-        strokeWidth="0.1"
+        strokeWidth="0.2"
       />
     </svg>
   );
