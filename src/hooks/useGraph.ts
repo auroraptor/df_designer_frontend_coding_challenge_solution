@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
-import { GraphData } from '../types/graph';
+import { useEffect, useState } from "react";
+import { GraphData } from "../types/graph";
 
 const useGraph = (id: number) => {
-  const [graph, setGraph] = useState<GraphData | null>(null);
+  const [graph, setGraph] = useState<GraphData>({
+    nodes: [],
+    edges: [],
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
