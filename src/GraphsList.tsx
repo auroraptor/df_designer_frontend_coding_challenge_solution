@@ -17,7 +17,8 @@ const GraphsList = () => {
   return (
     <div style={{ padding: "30px" }}>
       <select
-        value={selectedGraph || ""}
+        defaultValue=""
+        value={selectedGraph !== null ? selectedGraph : ""}
         onChange={(e) => setSelectedGraph(Number(e.target.value))}
         style={{
           border: "2px dotted black",
@@ -25,8 +26,8 @@ const GraphsList = () => {
           padding: "6px 12px",
         }}
       >
-        <option value="" disabled selected>
-          Select your option
+        <option value="" disabled>
+          Select your graph
         </option>
         {graphs.map((_, index) => (
           <option key={index} value={index}>
