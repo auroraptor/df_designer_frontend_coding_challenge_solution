@@ -29,28 +29,26 @@ function Connector(props: PropsConnector) {
     }, 0);
   }, [edge]);
 
-  if (edge)
-    return (
-      <svg
-        style={{
-          position: "absolute",
-          top: Math.min(coords.y1, coords.y2),
-          left: Math.min(coords.x1, coords.x2),
-          width: "100%"
-        }}
-        className="svg"
-      >
-        <line
-          x1={0}
-          y1={0}
-          x2={Math.abs(coords.x2 - coords.x1)}
-          y2={Math.abs(coords.y2 - coords.y1)}
-          stroke="black"
-          strokeWidth="0.1"
-        />
-      </svg>
-    );
-  else return null;
+  return (
+    <svg
+      style={{
+        position: "absolute",
+        top: Math.min(coords.y1, coords.y2),
+        left: Math.min(coords.x1, coords.x2),
+        width: "100%",
+      }}
+      className="svg"
+    >
+      <line
+        x1={0}
+        y1={0}
+        x2={Math.abs(coords.x2 - coords.x1)}
+        y2={Math.abs(coords.y2 - coords.y1)}
+        stroke="black"
+        strokeWidth="0.1"
+      />
+    </svg>
+  );
 }
 
 export default Connector;
