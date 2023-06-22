@@ -9,30 +9,18 @@ const createFakeGraphData = () => {
   return {
     nodes: [],
     edges: [],
-  }
-}
+  };
+};
 
 const Graph: React.FC<{ id: number }> = ({ id }): React.ReactElement | null => {
   const { graph, loading, error } = useGraph(id);
-
-  if (!graph) {
-    return null;
-  }
-
+  const [edges, setEdges] = useState<Edge[]>([]);
+  const [renderEdges, setRenderEdges] = useState(false);
   const columns = useCreateColumns(graph || createFakeGraphData());
   useMinimizeCrossings(columns, graph.edges || []);
 
-  if (error) {
-    return <div>{`Oops! :( ${error.message}`}</div>;
-  }
-
-  const [edges, setEdges] = useState<Edge[]>([]);
-  const [renderEdges, setRenderEdges] = useState(false);
-
   useEffect(() => {
-    if (graph) {
-      setEdges(graph.edges);
-    }
+    setEdges(graph ? graph.edges : []);
   }, [graph]);
 
   useEffect(() => {
@@ -40,6 +28,10 @@ const Graph: React.FC<{ id: number }> = ({ id }): React.ReactElement | null => {
       setRenderEdges(true);
     }
   }, [edges]);
+
+  if (error) {
+    return <div>{`Oops! :( ${error.message}`}</div>;
+  }
 
   if (loading) {
     return <div>Loading...</div>;
