@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Edge } from "./types/graph";
 
-interface PropsConnector {
+interface PropsGraphEdge {
   edge: Edge;
   key: React.Key;
 }
 
-function Connector(props: PropsConnector) {
-  const { edge } = props;
+const  GraphEdge: React.FC<PropsGraphEdge> = ({ edge }) => {
   const [coords, setCoords] = useState({ x1: 0, y1: 0, x2: 0, y2: 0 });
 
   useEffect(() => {
@@ -51,4 +50,4 @@ function Connector(props: PropsConnector) {
   );
 }
 
-export default Connector;
+export default GraphEdge;
