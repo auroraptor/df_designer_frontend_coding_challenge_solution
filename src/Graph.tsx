@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useCreateColumns from "./hooks/useCreateColumns";
 import useMinimizeCrossings from "./hooks/useMinimizeCrossing";
 import GraphEdge from "./GraphEdge";
+import { GraphProps } from "./types/componentProps";
 import { Edge, GraphData } from "./types/graph";
 
 const createFakeGraphData = (): GraphData => {
@@ -10,10 +11,6 @@ const createFakeGraphData = (): GraphData => {
     edges: [],
   };
 };
-
-interface GraphProps {
-  graph: GraphData;
-}
 
 const Graph: React.FC<GraphProps> = ({ graph }): React.ReactElement | null => {
   const [edges, setEdges] = useState<Edge[]>([]);

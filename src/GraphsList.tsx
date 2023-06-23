@@ -1,8 +1,4 @@
-type GraphsListProps = {
-  graphs: number[];
-  selectedGraph: number | null;
-  setSelectedGraph: (graphIndex: number | null) => void;
-};
+import { GraphsListProps } from "./types/componentProps";
 
 const GraphsList: React.FC<GraphsListProps> = ({
   graphs,
