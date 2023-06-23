@@ -1,19 +1,21 @@
 import { useState } from "react";
 import GraphsList from "./GraphsList";
 import useGraphsList from "./hooks/useGraphsList";
+import useGraph from "./hooks/useGraph";
 import Graph from "./Graph";
 import "./App.css";
 
 function App() {
-  const { graphs, loading, error } = useGraphsList();
+  const { graphs, loading: graphsLoading, error: graphsError } = useGraphsList();
   const [selectedGraph, setSelectedGraph] = useState<number | null>(null);
-
-  if (loading) {
+  const { graph, loading: graphLoading, error: graphError } = useGraph(selectedGraph);
+  
+  if (graphsLoading || graphLoading) {
     return <div>Loading...</div>;
   }
 
-  if (error) {
-    return <div>{`Oops! :( ${error.message}`}</div>;
+  if (graphsError || graphError) {
+    return <div>{`Oops! :( ${graphsError?.message || graphError?.message}`}</div>;
   }
 
   return (
@@ -23,7 +25,7 @@ function App() {
         selectedGraph={selectedGraph}
         setSelectedGraph={setSelectedGraph}
       />
-      {selectedGraph !== null && <Graph id={selectedGraph} />}
+      {selectedGraph !== null && graph && <Graph graph={graph} />}
     </>
   );
 }
