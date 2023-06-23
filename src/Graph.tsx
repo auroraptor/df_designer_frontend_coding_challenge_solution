@@ -4,7 +4,7 @@ import useMinimizeCrossings from "./hooks/useMinimizeCrossing";
 import GraphEdge from "./GraphEdge";
 import { Edge, GraphData } from "./types/graph";
 
-const createFakeGraphData = () => {
+const createFakeGraphData = (): GraphData => {
   return {
     nodes: [],
     edges: [],
