@@ -5,13 +5,7 @@ This project is a solution to the DF Designer Frontend Vacancy Coding Challenge.
 1. Fetch a list of available graphs from `/api/graphs` via a `GET` request.
 2. Fetch the selected graph data from `/api/graphs/:id` via a `GET` request.
 3. Organize nodes into columns.
-4. "Untangle" the connection between the columns of nodes.
-5. Render the graph into the DOM.
-
-1. Fetch a list of available graphs from /api/graphs via a GET request.
-2. Fetch the selected graph data from /api/graphs/:id via a GET request.
-3. Organize nodes into columns.
-4. "Untangle" the connections between the columns of nodes using the Sugiyama algorithm.
+4. "Untangle" the connections between the columns of nodes using the **Sugiyama algorithm**.
 5. Render the graph into the DOM using minimal inline styling and SVG for edges.
 
 For more details about the original challenge, read through [this file](https://github.com/mablin7/df_designer_frontend_test).
@@ -26,7 +20,7 @@ git clone git@github.com:auroraptor/df_designer_frontend_coding_challenge_soluti
 3. Run `npm start` to run the dev server.
 
 ## Project Structure
-The application logic is mainly handled in three custom hooks: `useGraphsList`, `useGraph`, `useCreateColumns` and `useMinimizeCrossing`.
+The application logic is mainly handled in four custom hooks: `useGraphsList`, `useGraph`, `useCreateColumns` and `useMinimizeCrossing`.
 
 - `useGraphsList` fetches the list of available graphs from `/api/graphs`.
 
