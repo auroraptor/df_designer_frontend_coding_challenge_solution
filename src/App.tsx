@@ -3,7 +3,6 @@ import GraphsList from "./GraphsList";
 import useGraphsList from "./hooks/useGraphsList";
 import useGraph from "./hooks/useGraph";
 import Graph from "./Graph";
-import "./App.css";
 
 function App() {
   const { graphs, loading: graphsLoading, error: graphsError } = useGraphsList();
