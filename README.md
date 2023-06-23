@@ -48,3 +48,10 @@ Minimal inline styles are used for a cleaner look, and the graph edges are rende
 
 **Note**
 The extra challenge of making the nodes draggable without a library was not implemented in this solution.
+
+### The Sugiyama Algorithm
+The Sugiyama algorithm is a method for drawing directed graphs in a layered style with minimal edge crossings, named after Kozo Sugiyama. It works by assigning nodes to different layers or ranks and then rearranges the nodes to reduce edge crossings.
+
+Unfortunately, a detailed resource or blog that exhaustively explains the Sugiyama algorithm for graph visualization with minimal edge crossings is hard to come by. The information seems quite scattered across various sources, including research papers, textbooks, and forum discussions.
+
+However, a good starting point is the Wikipedia page on [Layered Graph Drawing - Sugiyama's method](https://en.wikipedia.org/wiki/Layered_graph_drawing#Sugiyama's_method). Also, the original paper by Sugiyama et al., [Methods for Visual Understanding of Hierarchical Systems](https://ieeexplore.ieee.org/document/4308636), provides valuable insights into the algorithm. 
