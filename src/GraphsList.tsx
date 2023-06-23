@@ -1,29 +1,23 @@
-import { useState } from "react";
-import Graph from "./Graph";
-import useGraphsList from "./hooks/useGraphsList";
+type GraphsListProps = {
+  graphs: number[];
+  selectedGraph: number | null;
+  setSelectedGraph: (graphIndex: number | null) => void;
+};
 
-const GraphsList = () => {
-  const { graphs, loading, error } = useGraphsList();
-  const [selectedGraph, setSelectedGraph] = useState<number | null>(null);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{`Oops! :( ${error.message}`}</div>;
-  }
-
+const GraphsList: React.FC<GraphsListProps> = ({
+  graphs,
+  selectedGraph,
+  setSelectedGraph,
+}) => {
   return (
     <div style={{ padding: "30px" }}>
       <select
-        defaultValue=""
         value={selectedGraph !== null ? selectedGraph : ""}
         onChange={(e) => setSelectedGraph(Number(e.target.value))}
         style={{
-          border: "2px dotted black",
-          borderRadius: "10px",
-          padding: "6px 12px",
+          border: "1px solid #4d4d4d",
+          borderRadius: "4px",
+          padding: "12px 6px",
         }}
       >
         <option value="" disabled>
@@ -35,7 +29,6 @@ const GraphsList = () => {
           </option>
         ))}
       </select>
-      {selectedGraph !== null && <Graph id={selectedGraph} />}
     </div>
   );
 };
