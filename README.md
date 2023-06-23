@@ -16,8 +16,12 @@ For more details about the original challenge, read through [this file](https://
 ```
 git clone git@github.com:auroraptor/df_designer_frontend_coding_challenge_solution.git
 ```
-2. Run `npm install`.
-3. Run `npm start` to run the dev server.
+2. Navigate to the cloned directory
+```
+cd df_designer_frontend_coding_challenge_solution
+```
+3. Run `npm install`.
+4. Run `npm start` to run the dev server.
 
 ## Project Structure
 The application logic is mainly handled in four custom hooks: `useGraphsList`, `useGraph`, `useCreateColumns` and `useMinimizeCrossing`.
