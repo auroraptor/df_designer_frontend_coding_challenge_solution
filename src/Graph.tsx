@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import useGraph from "./hooks/useGraph";
 import useCreateColumns from "./hooks/useCreateColumns";
 import useMinimizeCrossings from "./hooks/useMinimizeCrossing";
 import GraphEdge from "./GraphEdge";
@@ -12,15 +11,18 @@ const createFakeGraphData = () => {
   };
 };
 
-const Graph: React.FC<{ id: number }> = ({ id }): React.ReactElement | null => {
-  const { graph, loading, error } = useGraph(id);
+interface GraphProps {
+  graph: GraphData;
+}
+
+const Graph: React.FC<GraphProps> = ({ graph }): React.ReactElement | null => {
   const [edges, setEdges] = useState<Edge[]>([]);
   const [renderEdges, setRenderEdges] = useState(false);
   const columns = useCreateColumns(graph || createFakeGraphData());
   useMinimizeCrossings(columns, graph.edges || []);
 
   useEffect(() => {
-    setEdges(graph ? graph.edges : []);
+    setEdges(graph.edges || []);
   }, [graph]);
 
   useEffect(() => {
@@ -28,14 +30,6 @@ const Graph: React.FC<{ id: number }> = ({ id }): React.ReactElement | null => {
       setRenderEdges(true);
     }
   }, [edges]);
-
-  if (error) {
-    return <div>{`Oops! :( ${error.message}`}</div>;
-  }
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div
@@ -54,9 +48,9 @@ const Graph: React.FC<{ id: number }> = ({ id }): React.ReactElement | null => {
                 key={node.id}
                 id={`${node.id}`}
                 style={{
-                  border: "2px solid black",
-                  borderRadius: "10px",
-                  padding: "6px 10px",
+                  border: "1px solid #4d4d4d",
+                  borderRadius: "4px",
+                  padding: "6px 12px",
                   margin: "10px 0",
                 }}
               >
