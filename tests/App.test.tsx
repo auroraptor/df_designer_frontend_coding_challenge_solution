@@ -12,7 +12,7 @@ import { FetchMock } from "jest-fetch-mock";
 const fetchMock = fetch as FetchMock;
 
 import graphs from "../src/mocks/graphs";
-import App from "../src/App";
+import App from "../src/components/App";
 
 function setup(jsx: JSX.Element) {
   return {

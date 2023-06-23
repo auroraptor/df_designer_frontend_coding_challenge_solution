@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import useCreateColumns from "./hooks/useCreateColumns";
-import useMinimizeCrossings from "./hooks/useMinimizeCrossing";
+import useCreateColumns from "../hooks/useCreateColumns";
+import useMinimizeCrossings from "../hooks/useMinimizeCrossing";
 import GraphEdge from "./GraphEdge";
-import { GraphProps } from "./types/componentProps";
-import { Edge, GraphData } from "./types/graph";
+import { GraphProps } from "../types/componentProps";
+import { Edge, GraphData } from "../types/graph";
 
 const createFakeGraphData = (): GraphData => {
   return {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import GraphsList from "./GraphsList";
-import useGraphsList from "./hooks/useGraphsList";
-import useGraph from "./hooks/useGraph";
+import useGraphsList from "../hooks/useGraphsList";
+import useGraph from "../hooks/useGraph";
 import Graph from "./Graph";
 
 function App() {

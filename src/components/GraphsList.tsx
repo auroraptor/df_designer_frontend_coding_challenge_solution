@@ -1,4 +1,4 @@
-import { GraphsListProps } from "./types/componentProps";
+import { GraphsListProps } from "../types/componentProps";
 
 const GraphsList: React.FC<GraphsListProps> = ({
   graphs,

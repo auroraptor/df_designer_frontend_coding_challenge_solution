@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { PropsGraphEdge } from "./types/componentProps";
+import { PropsGraphEdge } from "../types/componentProps";
 
 const  GraphEdge: React.FC<PropsGraphEdge> = ({ edge }) => {
   const [coords, setCoords] = useState({ x1: 0, y1: 0, x2: 0, y2: 0 });
