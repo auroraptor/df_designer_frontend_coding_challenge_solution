@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
 import { PropsGraphEdge } from "../types/componentProps";
 
-const  GraphEdge: React.FC<PropsGraphEdge> = ({ edge }) => {
+const  GraphEdge: React.FC<PropsGraphEdge> = ({ edge, columns }) => {
   const [coords, setCoords] = useState({ x1: 0, y1: 0, x2: 0, y2: 0 });
 
   useEffect(() => {
-    setTimeout(() => {
+    requestAnimationFrame(() => {
       const fromEl = document.getElementById(String(edge.fromId));
       const toEl = document.getElementById(String(edge.toId));
-
+  
       if (fromEl && toEl) {
         const fromRect = fromEl.getBoundingClientRect();
         const toRect = toEl.getBoundingClientRect();
-
+  
         const x1 = fromRect.right;
         const y1 = fromRect.top + fromRect.height / 2;
         const x2 = toRect.left;
         const y2 = toRect.top + toRect.height / 2;
-
+  
         setCoords({ x1, y1, x2, y2 });
       }
-    }, 0);
-  }, [edge]);
+    });
+  }, [edge, columns]);
 
   return (
     <svg

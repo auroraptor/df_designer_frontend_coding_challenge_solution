@@ -58,8 +58,7 @@ const Graph: React.FC<GraphProps> = ({ graph }): React.ReactElement | null => {
     const newColumns = [...columns];
     if (draggedNodeColumnIndex !== undefined && draggedNodeIndex !== undefined)
     newColumns[draggedNodeColumnIndex].splice(draggedNodeIndex, 1);
-  
-
+    
     if (draggedNode !== undefined)
     newColumns[columnId].push(draggedNode);
   
@@ -98,7 +97,8 @@ const Graph: React.FC<GraphProps> = ({ graph }): React.ReactElement | null => {
                   padding: "6px 12px",
                   margin: "10px 0",
                   cursor: "move",
-                  zIndex: "-1"
+                  zIndex: "1",
+                  backgroundColor: "white"
                 }}
               >
                 {node.name}
@@ -109,7 +109,7 @@ const Graph: React.FC<GraphProps> = ({ graph }): React.ReactElement | null => {
       ))}
       {renderEdges &&
         edges.map((edge) => (
-          <GraphEdge key={edge.fromId + "-" + edge.toId} edge={edge} />
+          <GraphEdge key={edge.fromId + "-" + edge.toId} edge={edge} columns={columns}/>
         ))}
     </div>
   );
