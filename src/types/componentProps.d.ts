@@ -1,4 +1,4 @@
-import { GraphData, Edge } from "./graph";
+import { GraphData, Edge, Node } from "./graph";
 
 export interface GraphProps {
   graph: GraphData;
@@ -7,6 +7,7 @@ export interface GraphProps {
 export interface PropsGraphEdge {
   edge: Edge;
   key: React.Key;
+  columns: Node[][];
 }
 
 export interface GraphsListProps {
