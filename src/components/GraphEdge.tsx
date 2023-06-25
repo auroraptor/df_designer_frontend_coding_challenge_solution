@@ -30,6 +30,7 @@ const  GraphEdge: React.FC<PropsGraphEdge> = ({ edge }) => {
         top: Math.min(coords.y1, coords.y2),
         left: Math.min(coords.x1, coords.x2),
         width: "100%",
+        zIndex: "-1"
       }}
       className="svg"
     >
