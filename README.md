@@ -12,18 +12,23 @@ For more details about the original challenge, read through [this file](https://
 
 ## Getting started
 
-1. Clone this repository 
+1. Clone this repository
+
 ```
 git clone git@github.com:auroraptor/df_designer_frontend_coding_challenge_solution.git
 ```
+
 2. Navigate to the cloned directory
+
 ```
 cd df_designer_frontend_coding_challenge_solution
 ```
+
 3. Run `npm install`.
 4. Run `npm start` to run the dev server.
 
 ## Project Structure
+
 The application logic is mainly handled in four custom hooks: `useGraphsList`, `useGraph`, `useCreateColumns` and `useMinimizeCrossing`.
 
 - `useGraphsList` fetches the list of available graphs from `/api/graphs`.
@@ -39,19 +44,34 @@ Minimal inline styles are used for a cleaner look, and the graph edges are rende
 </p>
 
 ## Checklist of Submitted Features
-  - [x] There is a dropdown to select one graph to show from all the available graphs.
-   - [x] The selected graph is immediately rendered.
-   - [x] The rendered graph is organized into columns.
-   - [x] The nodes in columns are ordered such that their edges cross as little as possible.
-   - [x] The graph looks visually pleasing.
-   - [x] The solution passes the test suite `npm test`.
 
-**Note**
-The extra challenge of making the nodes draggable without a library was not implemented in this solution.
+- [x] There is a dropdown to select one graph to show from all the available graphs.
+- [x] The selected graph is immediately rendered.
+- [x] The rendered graph is organized into columns.
+- [x] The nodes in columns are ordered such that their edges cross as little as possible.
+- [x] The graph looks visually pleasing.
+- [x] The solution passes the test suite `npm test`.
+
+**Extra challenge**
+
+- [x] Make the nodes draggable with the mouse without using a library.
+
+ <p align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN210MTF3enIyZjNmMDB5cHhlMmVhaWRwN3F2NGhtdDM0bG8ydGlyYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/drlZnGwup29ithuXm9/giphy.gif" alt="Dragging feature in action" style="width: 500px; height: 300px;">
+</p>
+
+The extra challenge of making the nodes draggable without a library was implemented in this solution. However, in some cases, the edge rendering behavior during node dragging may be unpredictable. This is an area of active investigation, and any insights or suggestions are welcome.
+
+## Issues
+
+If you encounter any issues or have any suggestions for improvement, please feel free to open an issue in this repository. Your feedback is greatly appreciated!
+
+---
 
 ### The Sugiyama Algorithm
+
 The Sugiyama algorithm is a method for drawing directed graphs in a layered style with minimal edge crossings, named after Kozo Sugiyama. It works by assigning nodes to different layers or ranks and then rearranges the nodes to reduce edge crossings.
 
 Unfortunately, a detailed resource or blog that exhaustively explains the Sugiyama algorithm for graph visualization with minimal edge crossings is hard to come by. The information seems quite scattered across various sources, including research papers, textbooks, and forum discussions.
 
-However, a good starting point is the Wikipedia page on [Layered Graph Drawing - Sugiyama's method](https://en.wikipedia.org/wiki/Layered_graph_drawing#Sugiyama's_method). Also, the original paper by Sugiyama et al., [Methods for Visual Understanding of Hierarchical Systems](https://ieeexplore.ieee.org/document/4308636), provides valuable insights into the algorithm. 
+However, a good starting point is the Wikipedia page on [Layered Graph Drawing - Sugiyama's method](https://en.wikipedia.org/wiki/Layered_graph_drawing#Sugiyama's_method). Also, the original paper by Sugiyama et al., [Methods for Visual Understanding of Hierarchical Systems](https://ieeexplore.ieee.org/document/4308636), provides valuable insights into the algorithm.
