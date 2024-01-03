@@ -1,6 +1,6 @@
-# 📊 DF Designer Frontend Vacancy - Coding Challenge Solution
+# 📊 Coding Challenge Solution
 
-This project is a solution to the DF Designer Frontend Vacancy Coding Challenge. It is a React application written in TypeScript. The application is structured to meet the following requirements:
+It is a React application written in TypeScript. The application is structured to meet the following requirements:
 
 1. Fetch a list of available graphs from `/api/graphs` via a `GET` request.
 2. Fetch the selected graph data from `/api/graphs/:id` via a `GET` request.
